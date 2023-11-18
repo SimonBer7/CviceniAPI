@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Můj Blog</title>
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Blog</h1>
+            <a class="btn" href="index.html">Home</a>
+            <a class="btn" href="login.html">Log In</a>
+            <a class="btn" href="signup.html">Sign Up</a>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+        <div class="post-form">
+            <h2>Přidat nový post</h2>
+            <form id="post-form">
+                <label for="image">Obrázek (JPG):</label>
+                <input type="file" id="image" name="image" accept=".jpg" required>
+                <textarea id="post-text" placeholder="Váš text"></textarea>
+                <button type="submit">Přidat post</button>
+            </form>
+        </div>
+
+
+
+
+        <div id="posts" class="posts">
+            {% for post in blog_posts %}
+            <div class="post">
+                <h3>{{ post[1] }}</h3>
+                <p>{{ post[2] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="./static/script.js"></script>
+</body>
+
+</html>
