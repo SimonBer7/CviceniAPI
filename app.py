@@ -40,8 +40,13 @@ def index():
     cursor.close()
     return render_template('index.html', blog_posts=blog_posts)
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
-
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
 
 @app.route('/api/blog', methods=['POST'])
 def create_blog_post():
